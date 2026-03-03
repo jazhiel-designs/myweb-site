@@ -104,4 +104,29 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
+
+  // Gallery Filter Logic (only for examples.html)
+  const filterContainer = document.querySelector('.filter-nav');
+  if (filterContainer) {
+    const filterButtons = filterContainer.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery img');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Set active class on button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        const filterValue = this.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = ''; // Reset display to default (flex item)
+          } else {
+            item.style.display = 'none'; // Hide item
+          }
+        });
+      });
+    });
+  }
 });
