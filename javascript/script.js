@@ -1,132 +1,162 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Back to Top button logic
-  const backToTop = document.getElementById('backToTop');
-  if (backToTop) { // Check if button exists on the page
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 200) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
+  const header = document.querySelector('header');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navigation = document.getElementById('primary-navigation');
+
+  if (header && menuToggle && navigation) {
+    const menuLabel = menuToggle.querySelector('.menu-toggle-label');
+    const setMenuOpen = isOpen => {
+      header.classList.toggle('menu-open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      if (menuLabel) {
+        menuLabel.textContent = isOpen ? 'Close' : 'Menu';
+      }
+    };
+
+    header.classList.add('has-mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    navigation.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        setMenuOpen(false);
       }
     });
-    backToTop.addEventListener('click', function () {
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && header.classList.contains('menu-open')) {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 700) {
+        setMenuOpen(false);
+      }
+    });
+  }
+
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    const updateBackToTop = () => {
+      backToTop.hidden = window.scrollY <= 200;
+    };
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    updateBackToTop();
+    backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
-  // Contact Info De-obfuscation
   const emailUser = 'info.jazhieldesigns';
   const emailDomain = 'gmail.com';
   const fullEmail = `${emailUser}@${emailDomain}`;
 
-  // Footer Email Link (present on all pages)
-  const footerEmailLink = document.getElementById('footer-email');
-  if (footerEmailLink) {
-    footerEmailLink.href = `mailto:${fullEmail}`;
-    footerEmailLink.textContent = fullEmail;
-  }
-
-  // Privacy Policy Page specific email links
-  const privacyEmail1 = document.getElementById('privacy-email-1');
-  const privacyEmail2 = document.getElementById('privacy-email-2');
-  if (privacyEmail1) {
-    privacyEmail1.href = `mailto:${fullEmail}`;
-    privacyEmail1.textContent = fullEmail;
-  }
-  if (privacyEmail2) {
-    privacyEmail2.href = `mailto:${fullEmail}`;
-    privacyEmail2.textContent = fullEmail;
-  }
-
-  // Contact Page specific email and phone links
-  const contactEmailLink = document.getElementById('contact-email');
-  if (contactEmailLink) {
-    contactEmailLink.href = `mailto:${fullEmail}`;
-    contactEmailLink.textContent = fullEmail;
-  }
+  ['footer-email', 'privacy-email-1', 'privacy-email-2', 'contact-email'].forEach(id => {
+    const emailLink = document.getElementById(id);
+    if (emailLink) {
+      emailLink.href = `mailto:${fullEmail}`;
+      emailLink.textContent = fullEmail;
+    }
+  });
 
   const contactPhoneLink = document.getElementById('contact-phone');
   if (contactPhoneLink) {
-    const phoneParts = ['704', '561', '1937'];
-    const fullPhone = phoneParts.join('');
-    const formattedPhone = phoneParts.join(' ');
-    contactPhoneLink.href = `tel:${fullPhone}`;
-    contactPhoneLink.textContent = formattedPhone;
+    const phone = ['704', '561', '1937'];
+    contactPhoneLink.href = `tel:${phone.join('')}`;
+    contactPhoneLink.textContent = phone.join(' ');
   }
 
-  // Gallery Modal Logic (only for examples.html)
+  const loadableImages = document.querySelectorAll('.hero-art img, .gallery img, .service-image');
+  loadableImages.forEach(img => {
+    const finishLoading = loaded => {
+      img.classList.remove('image-loading');
+      img.classList.add(loaded ? 'image-loaded' : 'image-load-error');
+    };
+
+    img.addEventListener('load', () => finishLoading(true), { once: true });
+    img.addEventListener('error', () => finishLoading(false), { once: true });
+
+    if (img.complete) {
+      finishLoading(img.naturalWidth > 0);
+    } else {
+      img.classList.add('image-loading');
+    }
+  });
+
   const galleryImages = document.querySelectorAll('.gallery img');
   const modal = document.getElementById('modal');
   const modalImg = document.getElementById('modalImg');
   const modalClose = document.getElementById('modalClose');
-  const modalDesc = document.getElementById('modalDesc'); // New: for description
+  const modalDesc = document.getElementById('modalDesc');
+  let lastFocusedImage = null;
 
-  if (galleryImages.length > 0 && modal && modalImg && modalClose) { // Check if gallery elements exist
-    galleryImages.forEach(img => {
-      img.addEventListener('click', function () {
-        modalImg.src = this.src;
-        modalImg.alt = this.alt;
-        if (modalDesc) { // If description element exists
-          modalDesc.textContent = this.getAttribute('data-description') || '';
-        }
-        modal.classList.add('active');
-      });
-    });
+  if (galleryImages.length > 0 && modal && modalImg && modalClose) {
+    const openGalleryImage = img => {
+      lastFocusedImage = img;
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      if (modalDesc) {
+        modalDesc.textContent = img.getAttribute('data-description') || '';
+      }
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('active');
+      modalClose.focus();
+    };
 
-    modalClose.addEventListener('click', function () {
+    const closeGalleryImage = () => {
       modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
       modalImg.src = '';
       modalImg.alt = '';
       if (modalDesc) {
-        modalDesc.textContent = ''; // Clear description on modal close
+        modalDesc.textContent = '';
+      }
+      if (lastFocusedImage && lastFocusedImage.isConnected) {
+        lastFocusedImage.focus();
+      }
+    };
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => openGalleryImage(img));
+      img.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openGalleryImage(img);
+        }
+      });
+    });
+
+    modalClose.addEventListener('click', closeGalleryImage);
+
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeGalleryImage();
       }
     });
 
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-        modalImg.src = '';
-        modalImg.alt = '';
-        if (modalDesc) {
-          modalDesc.textContent = '';
-        }
-      }
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        modal.classList.remove('active');
-        modalImg.src = '';
-        modalImg.alt = '';
-        if (modalDesc) {
-          modalDesc.textContent = '';
-        }
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && modal.classList.contains('active')) {
+        closeGalleryImage();
       }
     });
   }
 
-  // Gallery Filter Logic (only for examples.html)
-  const filterContainer = document.querySelector('.filter-nav');
-  if (filterContainer) {
-    const filterButtons = filterContainer.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery img');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        // Set active class on button
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-
-        const filterValue = this.getAttribute('data-filter');
-
-        galleryItems.forEach(item => {
-          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-            item.style.display = ''; // Reset display to default (flex item)
-          } else {
-            item.style.display = 'none'; // Hide item
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const animatedElements = document.querySelectorAll('.animated-fadein, .animated-fadein-slow, .animated-slideup');
+    if (animatedElements.length > 0) {
+      document.body.classList.add('motion-enabled');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
           }
         });
       });
-    });
+      animatedElements.forEach(element => revealObserver.observe(element));
+    }
   }
 });

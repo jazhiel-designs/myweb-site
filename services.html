@@ -6,35 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Explore the creative design services offered by Jazhiel Design's, including custom logo design, professional business cards, engaging flyers, and modern websites." />
   <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/x-icon" href="images/logo-notext.ico" />
+  <link rel="icon" type="image/x-icon" href="logo-notext.ico" />
   <title>Our Design Services | Jazhiel Design's</title>
 </head>
 
 <body>
   <header>
-    <div id="google_translate_element"></div>
-    <img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo">
-    <nav>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a href="index.html" aria-label="Jazhiel Design's home"><img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo"></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="menu-toggle-icon" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+    <nav id="primary-navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="services.html">Services</a></li>
+        <li class="active"><a href="services.html" aria-current="page">Services</a></li>
         <li><a href="examples.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
   </header>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <main>
-    <h1>Our Services</h1>
-    <p class="intro-paragraph" style="text-align:center; max-width: 800px; margin: 0 auto 3em;">
+  <main id="main-content">
+    <section class="page-intro">
+      <p class="eyebrow">From the first sketch to the final details</p>
+      <h1>Design that moves your business forward.</h1>
+      <p>
         We offer a range of design services to build a strong, cohesive brand identity that connects with your audience and helps your business grow.
-    </p>
+      </p>
+    </section>
 
     <div class="services-container">
       <section id="logos" class="service-item animated-fadein">
@@ -73,7 +74,7 @@
           </div>
         </div>
         <div class="service-image-wrapper">
-          <img src="images/business-carddesign.jpg" alt="Business Cards" class="service-image" width="640" height="480" />
+          <img src="images/business-carddesign.jpg" alt="Business Cards" class="service-image" width="640" height="480" loading="lazy" />
         </div>
       </section>
 
@@ -93,7 +94,7 @@
           </div>
         </div>
         <div class="service-image-wrapper">
-          <img src="images/flyerspromotion.jpg" alt="Flyers Design" class="service-image" width="640" height="480" />
+          <img src="images/flyerspromotion.jpg" alt="Flyers Design" class="service-image" width="640" height="480" loading="lazy" />
         </div>
       </section>
 
@@ -113,7 +114,7 @@
           </div>
         </div>
         <div class="service-image-wrapper">
-          <img src="images/webdesign.jpg" alt="Web Design" class="service-image" width="640" height="480" />
+          <img src="images/webdesign.jpg" alt="Web Design" class="service-image" width="640" height="480" loading="lazy" />
         </div>
       </section>
 
@@ -133,7 +134,7 @@
           </div>
         </div>
         <div class="service-image-wrapper">
-          <img src="images/stickersdesign.jpg" alt="Stickers" class="service-image" width="640" height="480" />
+          <img src="images/stickersdesign.jpg" alt="Stickers" class="service-image" width="640" height="480" loading="lazy" />
         </div>
       </section>
 
@@ -153,7 +154,7 @@
           </div>
         </div>
         <div class="service-image-wrapper">
-          <img src="images/tshirt.jpg" alt="Custom Merch" class="service-image" width="640" height="480" />
+          <img src="images/tshirt.jpg" alt="Custom Merch" class="service-image" width="640" height="480" loading="lazy" />
         </div>
       </section>
     </div>
@@ -180,7 +181,7 @@
       </div>
     </div>
   </footer>
-  <button id="backToTop" title="Back to Top" aria-label="Back to Top"></button>
+  <button id="backToTop" title="Back to Top" aria-label="Back to Top" hidden></button>
   <script src="javascript/script.js"></script>
 </body>
 

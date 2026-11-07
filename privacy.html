@@ -5,30 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Review the privacy policy for Jazhiel Design's. We are committed to protecting your personal information and being transparent about how we use it." />
   <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/x-icon" href="images/logo-notext.ico" />
+  <link rel="icon" type="image/x-icon" href="logo-notext.ico" />
   <title>Privacy Policy | Jazhiel Design's</title>
 </head>
 <body>
   <header>
-    <div id="google_translate_element"></div>
-    <img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo">
-    <nav>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a href="index.html" aria-label="Jazhiel Design's home"><img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo"></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="menu-toggle-icon" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+    <nav id="primary-navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="examples.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="active"><a href="privacy.html">Privacy Policy</a></li>
+        <li class="active"><a href="privacy.html" aria-current="page">Privacy</a></li>
       </ul>
     </nav>
   </header>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <main>
+  <main id="main-content">
     <h1>Privacy Policy</h1>
     <p><strong>Effective Date:</strong> January 1, 2026</p>
     <p>
@@ -95,7 +93,7 @@
       </div>
     </div>
   </footer>
-  <button id="backToTop" title="Back to Top" aria-label="Back to Top"></button>
+  <button id="backToTop" title="Back to Top" aria-label="Back to Top" hidden></button>
   <script src="javascript/script.js"></script>
 </body>
 </html>

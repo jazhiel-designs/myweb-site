@@ -6,73 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="View the design portfolio of Jazhiel Design's. Explore our work on logos, business cards, flyers, and websites for a variety of clients." />
   <link href="css/style.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/x-icon" href="images/logo-notext.ico" />
+  <link rel="icon" type="image/x-icon" href="logo-notext.ico" />
   <title>Our Design Portfolio | Jazhiel Design's</title>
 </head>
 
 <body>
   <header>
-    <div id="google_translate_element"></div>
-    <img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo">
-    <nav>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a href="index.html" aria-label="Jazhiel Design's home"><img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo"></a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="menu-toggle-icon" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+    <nav id="primary-navigation" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li class="active"><a href="examples.html">Gallery</a></li>
+        <li class="active"><a href="examples.html" aria-current="page">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
   </header>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <main>
-    <section class="hero animated-fadein">
-      <h1>Our Work</h1>
+  <main id="main-content">
+    <section class="page-intro">
+      <p class="eyebrow">A collection of ideas brought to life</p>
+      <h1>Made with care. Made to stand out.</h1>
       <p>
-        Explore our portfolio of recent projects. Click on any image to view it larger.
+        A look at some of the brands, print pieces, websites, and custom details we’ve created for our clients. Select a project to see it up close.
       </p>
     </section>
 
     <section id="logos" class="gallery-section animated-fadein">
       <h2>Logos</h2>
       <div class="gallery">
-        <img src="images/logo.png" alt="A Plus Cleaning & Jax LLC logo design" data-description="Logo for A Plus Cleaning & Jax LLC, a professional cleaning service." />
-        <img src="images/logo2.png" alt="C Mart Masonry LLC logo design" data-description="Logo for C Mart Masonry LLC, a construction and masonry company." />
-        <img src="images/logo3.png" alt="Isa's Studio handmade crafts logo design" data-description="Logo for Isabella's Cleaning, another cleaning service." />
-        <img src="images/logo4.png" alt="Luis Solis actor logo design" data-description="Logo for Luis Solis, a actor." />
-        <img src="images/logo5.png" alt="C Mart Masonry LLC 2nd logo design" data-description="Redesign for C Mart Masonry LLC, a construction and masonry company." />
+        <img src="images/logo.png" alt="A Plus Cleaning &amp; Jax LLC logo design" data-description="Logo for A Plus Cleaning &amp; Jax LLC, a professional cleaning service." tabindex="0" role="button" />
+        <img src="images/logo2.png" alt="C Mart Masonry LLC logo design" data-description="Logo for C Mart Masonry LLC, a construction and masonry company." tabindex="0" role="button" loading="lazy" />
+        <img src="images/logo3.png" alt="C Mart Masonry LLC second logo design" data-description="Redesign for C Mart Masonry LLC, a construction and masonry company." tabindex="0" role="button" loading="lazy" />
+        <img src="images/logo4.png" alt="Isabella's Cleaning logo design" data-description="Logo for Isabella's Cleaning, a cleaning service." tabindex="0" role="button" loading="lazy" />
+        <img src="images/logo5.png" alt="Luis Solis logo design" data-description="Logo design for Luis Solis." tabindex="0" role="button" loading="lazy" />
+        <img src="images/logo6.png" alt="Danza Tradicional de Rayados logo design" data-description="Logo design for Danza Tradicional de Rayados." tabindex="0" role="button" loading="lazy" />
       </div>
     </section>
 
     <section id="business-cards" class="gallery-section animated-fadein">
       <h2>Business Cards</h2>
       <div class="gallery">
-        <img src="images/buisnesscards1-front.png" alt="Front of A Plus Cleaning business card" data-description="Front of business card for A Plus Cleaning & Jax LLC, a cleaning service." />
-        <img src="images/buisnesscards1-back.png" alt="Back of A Plus Cleaning business card" data-description="Back of business card for A Plus Cleaning & Jax LLC, with contact details." />
-        <img src="images/buisnesscards2-front.png" alt="Front of C Mart Masonry business card" data-description="Front of business card for C Mart Masonry LLC, a construction and masonry company." />
-        <img src="images/buisnesscards2-back.png" alt="Back of C Mart Masonry business card" data-description="Back of business card for C Mart Masonry LLC." />
+        <img src="images/buisnesscards1-front.webp" alt="Front of A Plus Cleaning business card" data-description="Front of business card for A Plus Cleaning &amp; Jax LLC, a cleaning service." tabindex="0" role="button" loading="lazy" />
+        <img src="images/buisnesscards1-back.webp" alt="Back of A Plus Cleaning business card" data-description="Back of business card for A Plus Cleaning &amp; Jax LLC, with contact details." tabindex="0" role="button" loading="lazy" />
+        <img src="images/buisnesscards2-front.webp" alt="Front of C Mart Masonry business card" data-description="Front of business card for C Mart Masonry LLC, a construction and masonry company." tabindex="0" role="button" loading="lazy" />
+        <img src="images/buisnesscards2-back.webp" alt="Back of C Mart Masonry business card" data-description="Back of business card for C Mart Masonry LLC." tabindex="0" role="button" loading="lazy" />
       </div>
     </section>
 
     <section id="flyers" class="gallery-section animated-fadein">
       <h2>Flyers</h2>
       <div class="gallery">
-        <img src="images/flyer1.jpg" alt="Promotional flyer design for C Mart Masonry" data-description="Promotional flyer for C Mart Masonry LLC, highlighting their construction services." />
+        <img src="images/flyer1.jpg" alt="Promotional flyer design for C Mart Masonry" data-description="Promotional flyer for C Mart Masonry LLC, highlighting their construction services." tabindex="0" role="button" loading="lazy" />
       </div>
     </section>
 
     <section id="websites" class="gallery-section animated-fadein">
       <h2>Websites</h2>
       <div class="gallery">
-        <img src="images/website1part1.png" alt="Website design for C Mart Masonry" data-description="Website design for C Mart Masonry LLC, showcasing their construction projects." />
-        <img src="images/website1part2.png" alt="Website design for C Mart Masonry" data-description="Website design for C Mart Masonry LLC, showcasing their construction projects." />
-        <img src="images/website2part1.png" alt="Website design for Luis Solis" data-description="Website design for Luis Solis, a actor." />
-        <img src="images/website2part2.png" alt="Website design for Luis Solis" data-description="Website design for Luis Solis, a actor." />
+        <img src="images/cmartmasonrywebsite.png" alt="Website design for C Mart Masonry" data-description="Website design for C Mart Masonry LLC, showcasing their construction projects." tabindex="0" role="button" loading="lazy" />
+        <img src="images/luissoliswebsite.png" alt="Website design for Luis Solis" data-description="Website design for Luis Solis, an actor." tabindex="0" role="button" loading="lazy" />
       </div>
     </section>
 
@@ -80,15 +78,15 @@
     <section id="merch" class="gallery-section animated-fadein">
       <h2>Merch</h2>
       <div class="gallery">
-        <img src="images/merch1.jpg" alt="T-shirt design for C Mart Masonry" data-description="T-shirt design for C Mart Masonry LLC, showcasing their construction projects." />
-        <img src="images/merch2.jpg" alt="Custom sticker for C Mart Masonry" data-description="Custom sticker design for C Mart Masonry LLC, showcasing their construction projects." />
-        <img src="images/merch3.jpg" alt="Custom sticker design for Isabellas Cleaning, a cleaning service." data-description="Custom sticker design for Isabellas Cleaning, a cleaning service." />
+        <img src="images/merch1.jpg" alt="T-shirt design for C Mart Masonry" data-description="T-shirt design for C Mart Masonry LLC, showcasing their construction projects." tabindex="0" role="button" loading="lazy" />
+        <img src="images/merch2.jpg" alt="Custom sticker for C Mart Masonry" data-description="Custom sticker design for C Mart Masonry LLC, showcasing their construction projects." tabindex="0" role="button" loading="lazy" />
+        <img src="images/merch3.jpg" alt="Custom sticker design for Isabella's Cleaning" data-description="Custom sticker design for Isabella's Cleaning, a cleaning service." tabindex="0" role="button" loading="lazy" />
      
       </div>
     </section>
 
   </main>
-  <div class="modal" id="modal">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Portfolio image" aria-hidden="true">
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
       <img id="modalImg" src="" alt="Gallery Image" />
@@ -116,7 +114,7 @@
       </div>
     </div>
   </footer>
-  <button id="backToTop" title="Back to Top" aria-label="Back to Top"></button>
+  <button id="backToTop" title="Back to Top" aria-label="Back to Top" hidden></button>
   <script src="javascript/script.js"></script>
 </body>
 </html>

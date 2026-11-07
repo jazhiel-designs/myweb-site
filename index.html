@@ -4,207 +4,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jazhiel Design's offers custom logo, web, and graphic design services. We transform your ideas into stunning visuals to help your business stand out." />
-  <link href="css/style.css" rel="stylesheet" type="text/css" />  <link rel="icon" type="image/x-icon" href="images/logo-notext.ico" />
+  <meta name="description" content="Jazhiel Design's creates memorable logos, websites, and brand materials for businesses ready to stand out. Thoughtful design, personal service, English and Spanish." />
   <meta name="google-site-verification" content="spzhcpaYtCtuRRC-a3iWK36dPQuTbnXPXAWJPu_nGY8" />
-  <title>Jazhiel Design's | Creative Design Services </title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="logo-notext.ico" />
+  <title>Jazhiel Design's | Thoughtful Design for Standout Brands</title>
 </head>
 
 <body>
   <header>
-    <div id="google_translate_element"></div>
-    <img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's - Custom Logo and Web Design">
-    <nav>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a href="index.html" aria-label="Jazhiel Design's home">
+      <img src="images/logo-text.svg" width="200" height="200" class="centered-image" alt="Jazhiel Design's Logo">
+    </a>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="menu-toggle-icon" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+    <nav id="primary-navigation" aria-label="Main navigation">
       <ul>
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="examples.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
   </header>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <main>
-    <!-- Slideshow Banner -->
-    <div class="slideshow-container animated-fadein">
-      
-      <!-- Slide 1 -->
-      <div class="mySlides fade">
-        <a href="services.html">
-          <img src="images/webbanner.jpg" alt="Professional Web Design Services">
-          <div class="text">Professional Web Design</div>
-        </a>
+
+  <main id="main-content">
+    <section class="home-hero">
+      <div class="hero-copy animated-slideup">
+        <p class="eyebrow">Independent design studio · English &amp; Español</p>
+        <h1>Make your brand <span>impossible to miss.</span></h1>
+        <p>From first idea to final detail, we create thoughtful identities and digital experiences that help small businesses show up with confidence.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="cta-btn">Let’s make it happen <span aria-hidden="true">↗</span></a>
+          <a href="examples.html" class="cta-btn cta-btn--outline">Explore our work</a>
+        </div>
+        <div class="hero-note">Personal service. Original ideas. Design made for you.</div>
       </div>
-
-      <!-- Slide 2 -->
-      <div class="mySlides fade">
-        <a href="examples.html">
-          <img src="images/logobanner.jpg" alt="Creative Logo Design Portfolio">
-          <div class="text">Unique Logo Designs</div>
-        </a>
+      <div class="hero-art animated-fadein-slow" aria-label="Selected design work">
+        <div class="hero-art-main">
+          <img src="images/logo.png" alt="A Plus Cleaning and Jax brand identity design">
+        </div>
+        <div class="hero-art-side">
+          <img src="images/logo2.png" alt="C Mart Masonry logo design">
+        </div>
+        <span class="hero-art-label">A little preview of what we do</span>
       </div>
-
-      <!-- Slide 3 -->
-      <div class="mySlides fade">
-        <a href="contact.html">
-          <img src="images/customquote.jpg" alt="Contact Us for a Quote">
-          <div class="text">Get Your Custom Quote</div>
-        </a>
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="mySlides fade">
-        <a href="services.html">
-          <img src="images/stickersnew.jpg" alt="Now offering Stickers!">
-          <div class="text"> Custom Stickers!</div>
-        </a>
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="mySlides fade">
-        <a href="services.html#t-shirts">
-          <img src="images/tshirt-design.jpg" alt="Custom Merch">
-          <div class="text">Amazing Merch</div>
-        </a>
-      </div>
-
-      <!-- Controls -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      <button id="pauseBtn" class="pause-btn" onclick="togglePause()" aria-label="Pause Slideshow">&#10074;&#10074;</button>
-    </div>
-    <div id="dots-container" style="text-align:center; margin-bottom: 2em;">
-    </div>
-
-    <section class="hero animated-fadein">
-      <h1>Custom Designs to Build Your Brand</h1>
-      <p>
-        At Jazhiel Design's, we transform your ideas into stunning visuals and digital experiences. We help brands and individuals stand out in a crowded world. Our approach is personal, creative, and always tailored to your needs.
-      </p>
-      <p>
-        Whether you’re a startup looking for a unique identity, a business needing a fresh website, or an event organizer seeking eye-catching flyers, we’re here to help. We pride ourselves on quality, communication, and results that exceed expectations.
-      </p>
-      <p>
-        <strong>Let’s create something amazing together!</strong>
-      </p>
-      <p style="text-align:center;">
-        <a href="contact.html" class="cta-btn">Start Your Project Today</a>
-      </p>
     </section>
-    <section class="testimonials animated-fadein-slow" style="margin-top:2em; background-color: #f9f9f9; padding: 2em 1em; border-radius: 8px;">
-      <h2 style="text-align:center; color:#ffb300;">What Our Clients Say</h2>
-      <div style="display:flex; flex-direction:row; flex-wrap:wrap; justify-content:center; gap:2em; align-items:flex-start;">
-        <blockquote class="animated-slideup" style="max-width:450px; flex: 1 1 300px; background:#ffffff; border-left:4px solid #ffb300; padding:1em 1.5em; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <p>
-            "Jazhiel Design's created a professional logo and website for our masonry business. The process was smooth, and the results exceeded our expectations. Highly recommended!"
-          </p>
-          <cite style="display:block; margin-top:1em; font-style:normal; color:#222;"><strong>C Mart Masonry LLC</strong></cite>
+
+    <section class="home-services animated-fadein" aria-labelledby="home-services-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow eyebrow--dark">Good ideas, made real</p>
+          <h2 id="home-services-heading">Everything your brand needs to show up.</h2>
+        </div>
+        <p>One creative partner for the details that make your business memorable—online, in print, and everywhere in between.</p>
+      </div>
+      <div class="home-service-grid">
+        <a class="home-service-card" href="services.html#logos">
+          <span class="card-index">01 / IDENTITY</span>
+          <h3>Logos &amp; branding</h3>
+          <p>Build a look that feels unmistakably yours, from your first logo to a cohesive visual identity.</p>
+        </a>
+        <a class="home-service-card" href="services.html#web-design">
+          <span class="card-index">02 / DIGITAL</span>
+          <h3>Websites</h3>
+          <p>Make a strong first impression with a polished website that works beautifully across devices.</p>
+        </a>
+        <a class="home-service-card" href="services.html#business-cards">
+          <span class="card-index">03 / PRINT &amp; MORE</span>
+          <h3>Print, stickers &amp; merch</h3>
+          <p>Bring your brand into the real world with business cards, promotional pieces, and custom merch.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="testimonials animated-fadein" aria-labelledby="testimonials-heading">
+      <p class="eyebrow eyebrow--dark">Kind words from our clients</p>
+      <h2 id="testimonials-heading">Good work, good people.</h2>
+      <div class="testimonial-grid">
+        <blockquote>
+          <p>“Jazhiel Design's created a professional logo and website for our masonry business. The process was smooth, and the results exceeded our expectations. Highly recommended!”</p>
+          <cite>C Mart Masonry LLC</cite>
         </blockquote>
-        <blockquote class="animated-slideup" style="max-width:450px; flex: 1 1 300px; background:#ffffff; border-left:4px solid #ffb300; padding:1em 1.5em; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-          <p>
-            "I loved working with Jazhiel Design's! My cleaning business now has a beautiful logo and beautiful buisness cards that truly reflect my brand. Thank you for your creativity and attention to detail."
-          </p>
-          <cite style="display:block; margin-top:1em; font-style:normal; color:#222;"><strong>Isabella's Cleaning</strong></cite>
+        <blockquote>
+          <p>“I loved working with Jazhiel Design's! My cleaning business now has a beautiful logo and business cards that truly reflect my brand. Thank you for your creativity and attention to detail.”</p>
+          <cite>Isabella's Cleaning</cite>
         </blockquote>
       </div>
     </section>
   </main>
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
-      <img id="modalImg" src="" alt="Gallery Image" />
-    </div>
-  </div>
-  <footer class="site-footer animated-fadein-slow">
+
+  <footer class="site-footer">
     <div class="footer-content">
-      <div>
-        <strong>Jazhiel Design's</strong> &mdash; Creative Design Services
-      </div>
-      <div>
-        <a id="footer-email" aria-label="Email Jazhiel Design's"></a>
-      </div>
+      <div><strong>Jazhiel Design's</strong> &mdash; Creative Design Services</div>
+      <div><a id="footer-email" aria-label="Email Jazhiel Design's"></a></div>
       <div class="footer-social">
         <a href="https://facebook.com/jazhieldesigns" target="_blank" rel="noopener" aria-label="Facebook">
-          <img src="images/facebook.svg" alt="Facebook" class="footer-social-icon" width="28" height="28" />
+          <img src="images/facebook.svg" alt="" class="footer-social-icon" width="28" height="28" />
         </a>
         <a href="https://www.instagram.com/jazhieldesigns" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="images/instagram.svg" alt="Instagram" class="footer-social-icon" width="28" height="28" />
+          <img src="images/instagram.svg" alt="" class="footer-social-icon" width="28" height="28" />
         </a>
       </div>
-      <div class="footer-copy">
-        &copy; Jazhiel Design's 2026. All rights reserved.
-      </div>
+      <div class="footer-copy">&copy; Jazhiel Design's 2026. All rights reserved.</div>
     </div>
   </footer>
-  <button id="backToTop" title="Back to Top" aria-label="Back to Top"></button>
+  <button id="backToTop" title="Back to Top" aria-label="Back to Top" hidden></button>
   <script src="javascript/script.js"></script>
-  <script>
-    let slideIndex = 1;
-    let slideTimer;
-    let isPaused = false;
-
-    // Generate dots automatically based on slide count
-    const slides = document.getElementsByClassName("mySlides");
-    const dotsContainer = document.getElementById("dots-container");
-    
-    for (let i = 0; i < slides.length; i++) {
-      let dot = document.createElement("span");
-      dot.className = "dot";
-      dot.onclick = function() { currentSlide(i + 1); };
-      dotsContainer.appendChild(dot);
-    }
-
-    // Initialize slideshow
-    showSlides(slideIndex);
-
-    // Start automatic cycling
-    slideTimer = setInterval(function() {
-      if (!isPaused) {
-        plusSlides(1);
-      }
-    }, 5000); // Change image every 5 seconds
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-    }
-
-    function togglePause() {
-      const btn = document.getElementById("pauseBtn");
-      isPaused = !isPaused;
-      if (isPaused) {
-        btn.innerHTML = "&#9658;"; // Play symbol
-        btn.setAttribute('aria-label', 'Play Slideshow');
-      } else {
-        btn.innerHTML = "&#10074;&#10074;"; // Pause symbol
-        btn.setAttribute('aria-label', 'Pause Slideshow');
-      }
-    }
-  </script>
 </body>
+
 </html>
